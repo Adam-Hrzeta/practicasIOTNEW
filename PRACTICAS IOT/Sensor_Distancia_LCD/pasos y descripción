@@ -1,0 +1,31 @@
+Materiales:
+
+1 Arduino
+1 Sensor ultrasónico (HC-SR04)
+1 LED
+1 Pantalla LCD
+Cables de conexión
+Descripción:
+
+En este proyecto, se utiliza un sensor ultrasónico para medir la distancia de un objeto. Cuando la distancia medida es menor o igual a 20 cm, se enciende un LED. Además, la distancia se muestra en una pantalla LCD para que se pueda ver en tiempo real.
+
+Pasos:
+
+Definición de pines y componentes:
+
+El pin trig se usa para enviar el pulso del sensor ultrasónico.
+El pin eco se utiliza para recibir el pulso de vuelta y calcular la distancia.
+Se conecta un LED en el pin 13.
+Usamos una pantalla LCD de 16x2 conectada a los pines 7, 6, 5, 4, 3 y 2.
+Configuración del sensor ultrasónico:
+
+Se configura el pin trig como salida y el pin eco como entrada.
+Para medir la distancia, se envía un pulso corto (digitalWrite(trig, HIGH) y luego digitalWrite(trig, LOW)) y se mide el tiempo que tarda el pulso en regresar usando pulseIn(eco, HIGH).
+La distancia se calcula con la fórmula distancia = duracion / 58.2, ya que el sensor ultrasónico mide el tiempo en microsegundos y la constante 58.2 convierte ese valor a centímetros.
+Configuración del LCD:
+
+Se inicializa el LCD con lcd.begin(16, 2), indicando que será de 16 columnas y 2 filas.
+Se muestra la distancia medida en la segunda línea del LCD usando lcd.setCursor(0, 1) y lcd.print().
+Control del LED:
+
+Si la distancia medida es menor o igual a 20 cm, el LED se enciende con digitalWrite(led, HIGH). Si la distancia es mayor a 20 cm, el LED se apaga con digitalWrite(led, LOW)
