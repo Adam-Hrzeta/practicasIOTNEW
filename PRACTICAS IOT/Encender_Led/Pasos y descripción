@@ -1,0 +1,23 @@
+Materiales:
+Arduino Uno: Es el microcontrolador que va a controlar los LEDs.
+6 LEDs: Serán los que vamos a encender y apagar secuencialmente.
+6 resistencias de 220Ω: Las ponemos para proteger los LEDs y evitar que se quemen.
+Cables de conexión: Necesarios para hacer las conexiones entre el Arduino, las resistencias y los LEDs.
+Protoboard (opcional): Si no quieres hacer un cableado directo, la protoboard nos ayudará a organizar las conexiones.
+Descripción:
+Este proyecto consiste en encender y apagar 6 LEDs conectados a los pines 1 a 6 del Arduino. Lo que vamos a lograr es que los LEDs se enciendan uno a uno, comenzando del pin 6 al pin 1. Después, los LEDs se apagarán en orden inverso, del pin 1 al pin 6. Vamos a usar el código para hacer que este patrón se repita en un bucle.
+
+Pasos para hacerlo:
+Conectar los LEDs:
+Primero, conectamos el lado largo de los LEDs (ánodo) a los pines 1, 2, 3, 4, 5 y 6 del Arduino. Luego, conectamos el lado corto (cátodo) a una fila en la protoboard. Ahí es donde vamos a colocar las resistencias de 220Ω, entre los LEDs y el GND (tierra) para protegerlos.
+
+Conectar el Arduino:
+Conectamos el Arduino a la computadora mediante el cable USB o una fuente de alimentación externa si no estamos usando el USB.
+
+Subir el código al Arduino:
+Ahora, abrimos el IDE de Arduino en la computadora, copiamos y pegamos el código que te mostré antes. Después, seleccionamos el tipo de placa y el puerto en el IDE y le damos a "Subir". Así el código llegará al Arduino.
+
+Ver el funcionamiento:
+Cuando el código esté cargado, los LEDs comenzarán a encenderse uno por uno, desde el LED en el pin 6 hasta el del pin 1. Después, se apagarán de nuevo pero ahora en el orden inverso, del pin 1 al pin 6. Todo esto se repetirá una y otra vez.
+
+Este es un proyecto básico para aprender cómo controlar LEDs con Arduino. 
