@@ -1,0 +1,33 @@
+Materiales:
+Arduino Uno: El microcontrolador que va a procesar las señales de los sensores y controlar los LEDs.
+4 LEDs: Los utilizaremos para encenderlos o apagarlos dependiendo de los valores que leemos de los sensores.
+Sensores analógicos (como potenciómetros o sensores de luz): Estos sensores se conectan a los pines analógicos A0 y A1 del Arduino para medir valores analógicos.
+4 resistencias de 220Ω: Para proteger los LEDs y evitar que se quemen.
+Cables de conexión: Para conectar los LEDs y sensores al Arduino.
+Protoboard (opcional): Si prefieres organizar las conexiones de manera ordenada.
+Descripción:
+Este código lee valores de dos sensores conectados a los pines A0 y A1 del Arduino. Dependiendo de los valores leídos de estos sensores, el código encenderá o apagará los LEDs conectados a los pines digitales 9, 10, 11 y 12. La lectura de los sensores se realiza mediante la función analogRead(), y si el valor de los sensores excede ciertos umbrales, se encienden los LEDs correspondientes.
+
+Pasos para hacerlo:
+Conectar los sensores:
+Conecta un sensor (como un potenciómetro) al pin A0 y otro sensor al pin A1 del Arduino. Asegúrate de conectar los pines de alimentación y tierra de los sensores adecuadamente.
+
+Conectar los LEDs:
+Conecta 4 LEDs a los pines 9, 10, 11 y 12 del Arduino. El lado largo de cada LED (ánodo) se conecta a uno de estos pines, y el lado corto (cátodo) se conecta a tierra a través de una resistencia de 220Ω.
+
+Subir el código al Arduino:
+Abre el IDE de Arduino, copia y pega el código en el editor. Luego, selecciona la placa y el puerto correcto en el IDE y presiona "Subir" para cargar el código en el Arduino.
+
+Observar el comportamiento:
+Cuando el código esté funcionando, verás que el Arduino lee constantemente los valores de los sensores A0 y A1 y los imprime en el Monitor Serial. Dependiendo de los valores de los sensores, los LEDs se encenderán o apagarán:
+
+Si el valor de x (A0) es mayor que 520, el LED en el pin 9 se encenderá.
+Si el valor de x es menor que 500, el LED en el pin 10 se encenderá.
+Si el valor de y (A1) es mayor que 1020, el LED en el pin 11 se encenderá.
+Si el valor de y es menor que 500, el LED en el pin 12 se encenderá.
+Estos valores se ajustan según los sensores y su configuración, y puedes observar los cambios en el Monitor Serial.
+
+Función del código:
+El código lee las señales analógicas de los sensores conectados a los pines A0 y A1.
+Dependiendo de estos valores, enciende o apaga los LEDs conectados a los pines digitales 9, 10, 11 y 12.
+Los umbrales de activación para los LEDs están definidos por los valores de los sensores: x > 520, x < 500, y > 1020, y y < 500.
