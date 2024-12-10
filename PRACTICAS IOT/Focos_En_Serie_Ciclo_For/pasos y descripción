@@ -1,0 +1,23 @@
+Materiales:
+Arduino Uno: La placa que controlará los LEDs.
+5 LEDs: Serán los que vamos a encender y apagar secuencialmente.
+5 resistencias de 220Ω: Las usaremos para proteger los LEDs y que no se dañen.
+Cables de conexión: Para conectar todo.
+Protoboard (opcional): Para organizar las conexiones de manera ordenada.
+Descripción:
+Este código se utiliza para encender y apagar 5 LEDs en secuencia, de modo que cada LED se encienda durante 2000 milisegundos (2 segundos) y luego se apague. Primero, los LEDs se encienden de uno en uno en orden ascendente (del pin 1 al pin 5), y después se apagan en orden descendente (del pin 5 al pin 1). El proceso se repite una y otra vez.
+
+Pasos para hacerlo:
+Conectar los LEDs:
+Conectamos el lado largo de los 5 LEDs (ánodo) a los pines 1, 2, 3, 4 y 5 del Arduino. Luego, conectamos el lado corto (cátodo) de los LEDs a una fila común en la protoboard, y en esa misma fila colocamos las resistencias de 220Ω. Las resistencias van conectadas a tierra (GND).
+
+Conectar el Arduino:
+Conectamos el Arduino a la computadora mediante un cable USB o una fuente de alimentación externa si no usamos el USB.
+
+Subir el código al Arduino:
+Abrimos el IDE de Arduino, copiamos y pegamos el código en el editor. Después, seleccionamos la placa y el puerto en el IDE, y presionamos "Subir" para cargar el código en el Arduino.
+
+Observar el comportamiento:
+Al cargar el código, verás que los LEDs se encienden uno por uno en orden (de 1 a 5), cada uno durante 2 segundos. Luego, los LEDs se apagan en el mismo orden, pero de atrás hacia adelante (de 5 a 1). Este ciclo se repite una y otra vez.
+
+Este proyecto es útil para aprender cómo controlar múltiples LEDs con Arduino y manejar la secuencia de encendido y apagado usando tiempos.
