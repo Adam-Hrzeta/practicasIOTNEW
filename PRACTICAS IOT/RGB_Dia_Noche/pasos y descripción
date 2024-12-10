@@ -1,0 +1,31 @@
+Materiales:
+Arduino Uno: El microcontrolador que se utilizará para controlar los LEDs y leer el sensor de luz.
+LDR (Light Dependent Resistor): Sensor de luz que detecta la cantidad de luz en su entorno.
+LED RGB (Rojo, Verde, Azul): Los LEDs de colores que se encenderán dependiendo de la cantidad de luz detectada por el LDR.
+Resistencias de 220Ω: Para proteger los LEDs y evitar que se quemen.
+Cables de conexión: Para conectar todo al Arduino.
+Protoboard (opcional): Para organizar las conexiones de manera más ordenada.
+Descripción:
+Este código lee el valor de luz ambiente con un sensor LDR (resistor dependiente de luz). Según el valor de luz detectado, se encenderán los LEDs en diferentes colores. Si es de noche (poca luz), el LED azul se encenderá. Si es de día (mucha luz), el LED RGB se encenderá en blanco (mezcla de todos los colores) y luego cambiará a verde.
+
+Pasos para hacerlo:
+Conectar el LDR:
+Conecta un extremo del LDR a uno de los pines analógicos del Arduino (A0 por ejemplo). Conecta el otro extremo del LDR a 5V. Además, coloca una resistencia de 10kΩ entre el LDR y tierra (GND) para formar un divisor de voltaje.
+
+Conectar los LEDs RGB:
+Conecta los pines de los LEDs RGB a los pines digitales 2, 3 y 4 del Arduino (para los colores rojo, verde y azul, respectivamente). Asegúrate de conectar las resistencias de 220Ω en cada pin del LED.
+
+Subir el código al Arduino:
+Abre el IDE de Arduino, copia y pega el código en el editor, selecciona la placa y puerto adecuado, y haz clic en "Subir" para cargar el código en el Arduino.
+
+Observar el comportamiento:
+Una vez que el código esté funcionando, verás que el Arduino lee constantemente la cantidad de luz que recibe el LDR. Dependiendo de la cantidad de luz:
+
+Si la luz es baja (es de noche), el LED azul se encenderá.
+Si la luz es alta (es de día), el LED RGB se encenderá en blanco (rojo, verde y azul juntos) por 2 segundos y luego se apagará el color azul y quedará encendido el color verde.
+El valor de la luz se imprimirá en el Monitor Serial, y si el valor de la luz es mayor o igual a 220, se considerará "de noche". Si el valor es menor, se considerará "de día".
+
+Función del código:
+El LDR mide la cantidad de luz y la variable valor almacena esta lectura.
+Si el valor leído es mayor o igual a 220, el sistema considera que es de noche, y enciende el LED azul.
+Si el valor es menor que 220, el sistema considera que es de día, y el LED RGB se enciende primero en blanco (todos los colores) y luego cambia a verde.
