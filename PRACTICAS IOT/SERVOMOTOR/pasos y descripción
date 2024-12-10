@@ -1,0 +1,44 @@
+Materiales:
+Arduino Uno: El microcontrolador que vamos a usar para controlar el servomotor y el sensor ultrasónico.
+Sensor Ultrasónico (HC-SR04): Este sensor mide la distancia de objetos mediante ondas ultrasónicas.
+Servomotor: Un motor que puede girar a diferentes ángulos, controlado por el Arduino.
+Cables de conexión: Para conectar todos los componentes.
+Resistencia de 220Ω (si es necesario): Para proteger el circuito.
+Descripción:
+Este código controla un servomotor utilizando un sensor ultrasónico. El servomotor ajusta su posición dependiendo de la distancia que mide el sensor. Si la distancia es menor o igual a 10 cm, el servomotor se moverá a una posición de 120 grados; si la distancia es mayor a 10 cm, el servomotor se moverá a 45 grados.
+
+Pasos:
+Conectar el Sensor Ultrasónico:
+
+El pin Trig del sensor se conecta al pin 2 del Arduino.
+El pin Echo se conecta al pin 3 del Arduino.
+Conectar el Servomotor:
+
+El servomotor se conecta al pin 4 del Arduino.
+Subir el Código al Arduino:
+
+Abre el IDE de Arduino, selecciona la placa adecuada y carga el código al Arduino.
+Ver el Funcionamiento:
+
+El sensor ultrasónico mide la distancia continuamente.
+Si la distancia detectada es menor o igual a 10 cm, el servomotor se moverá a 120 grados.
+Si la distancia es mayor a 10 cm, el servomotor se moverá a 45 grados.
+Explicación del Código:
+Librería Servo: Se incluye la librería Servo.h para controlar el servomotor con facilidad.
+
+Variables:
+
+trig y echo: Son los pines donde se conecta el sensor ultrasónico.
+tiempo: Almacena el tiempo que tarda en llegar el eco de la señal ultrasónica.
+distancia: Calcula la distancia en centímetros usando la fórmula (tiempo / 58.2).
+Configuración (setup):
+
+Se configuran los pines del sensor como OUTPUT para Trig y INPUT para Echo.
+Se conecta el servomotor al pin 4 del Arduino utilizando ioe.attach(4).
+Bucle Principal (loop):
+
+Se envía una señal de 10 microsegundos de duración a Trig para iniciar la medición.
+Se mide el tiempo que tarda en recibir el eco de la señal utilizando pulseIn(echo, HIGH).
+Se calcula la distancia usando la fórmula distancia = tiempo / 58.2.
+Si la distancia es menor o igual a 10 cm, el servomotor se mueve a 120 grados con ioe.write(120).
+Si la distancia es mayor a 10 cm, el servomotor se mueve a 45 grados con ioe.write(45).
