@@ -1,0 +1,28 @@
+Materiales:
+
+1 Arduino
+3 LEDs (rojo, amarillo y verde)
+3 resistencias de 220Ω
+Cables de conexión
+Protoboard (opcional)
+Descripción:
+
+En este proyecto, vamos a usar tres LEDs para simular un semáforo. Los pines del Arduino controlarán los LEDs. Primero, encenderemos el LED verde por 4 segundos, luego apagamos el verde y encendemos el LED amarillo con algunos parpadeos. Finalmente, el LED rojo se encenderá durante 4 segundos. Esto se repetirá en un ciclo continuo.
+
+Pasos:
+
+Configuración inicial:
+
+Declaramos los pines para los LEDs de la siguiente manera:
+Rojo en el pin 8
+Amarillo en el pin 13
+Verde en el pin 6
+Configuración de los pines como salida:
+
+En la función setup(), configuramos los pines como salidas, porque vamos a controlar el estado de los LEDs (encender o apagar).
+Secuencia de encendido y apagado:
+
+En el bucle loop(), comenzamos encendiendo el LED verde por 4 segundos, luego lo apagamos.
+Después, encendemos el LED amarillo con un parpadeo (encendido durante 500 ms, apagado 250 ms, repitiendo 3 veces).
+Finalmente, encendemos el LED rojo por 4 segundos y lo apagamos.
+Esto hace que los LEDs sigan una secuencia similar a la de un semáforo.
